@@ -6,11 +6,15 @@ from sqlalchemy import text
 
 from models.usuario import Usuario
 
+from routes.auth import auth
+
 app = Flask(__name__)
 
 app.config.from_object(Config)
 
 db.init_app(app)
+
+app.register_blueprint(auth)
 
 
 with app.app_context():

@@ -20,7 +20,7 @@ def cadastro():
 
         usuario_existente = Usuario.query.filter_by(
             email=email
-        ).firts()
+        ).first()
 
         if usuario_existente:
             flash("Este e-mail já está cadastrado.", "erro")

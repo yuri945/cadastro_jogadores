@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Criar conta</h1>
+
+    {% with mensagens = get_flashed_messages(with_categories=true)%}
+        {% for categoria, mensagem in mensagens %}
+            <p>{{mensagem}}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <br><br>
+
+        <label>E-mail:</label>
+        <input type="email" name="email" required >
+
+        <br><br>
+
+        <label>Senha:</label>
+        <input type="password" name="senha" required>
+
+        <br><br>
+
+        <button type="submit">
+            Cadastrar
+        </button>
+    </form>
+
+    
+</body>
+</html>
